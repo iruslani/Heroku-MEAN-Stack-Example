@@ -1,10 +1,74 @@
 <!doctype html>
-<html>
+<html ng-app="fundmeApp">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/angular.min.js"></script>
+    <script src="app/app.js"></script>
     <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
-  </body>
+<!-- Semantic UI  -->
+<div class="ui container" ng-controller="FundMeAppController as fundBox">
+  <div class="wrapper">
+  <div class="ui dark-grey message">${{fundBox.donationRemaining}} still needed for this project</div>
+  <div class="ui segment">
+    <div class="ui top attached progress red">
+      <!-- <div class="bar" style="min-width: "+{{fundBox.progress}}+"%;"></div> -->
+      <div class="bar" ng-style="{'min-width': progress+'%'}"></div>
+    </div>
+    <div class="content">
+      <div class="summary"><span class="urgent">Only 3 days</span> left to fund this project.{{fundBox.progress}}</div>
+      <div class="ui small feed">
+        <div class="event">
+          <div class="content">
+            <div class="summary">
+               Join the 42 other donors who have already supported this project. Every dollar helps.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content form">
+      <form ng-submit="fundBox.addDonation()">
+        <div class="ui equal width form">
+          <div class="fields">
+            <div class="field" id="donationInput" >
+              <input type="text" ng-model="fundBox.donation" placeholder="$50">
+            </div>
+            <div class="field">
+              <input class="ui green button fluid" type="submit" value="Give Now">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="content">
+      <a href="!#" >Why give $50?</a>
+    </div>
+  </div>
+
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class="ui fluid button" tabindex="0">
+        <div class="visible content">Save for later </div>
+        <!-- <div class="hidden content">
+          $12.99 a month
+        </div> -->
+      </div>
+    </div>
+    <div class="eight wide column">
+      <div class="ui animated fade fluid button" tabindex="0">
+        <div class="visible content">Tell your friends</div>
+        <div class="hidden content">
+          Share on Facebook
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</body>
 </html>

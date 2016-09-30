@@ -1,0 +1,40 @@
+.wrapper {
+  max-width: 400px;
+  margin-top: 55px
+}
+.wrapper .segment {
+  margin-top: 30px;
+}
+.ui.card {
+  width: 300px;
+}
+.content.form {
+  margin: 1em 0;
+}
+.ui.segment, .ui.progress.top.attached, .ui.message {
+  border-radius: 0px;
+}
+.ui.progress.attached, .ui.progress.attached .bar {
+  height: 1rem;
+  border-radius: 0px;
+}
+.ui.dark-grey.message {
+    background-color: #424242;
+    color: #FFF;
+    box-shadow: 0 0 0 1px #B58105 inset,0 0 0 0 transparent;
+}
+.ui.progress.red .bar {
+    background-color: #ef5f3c!important;
+}
+.urgent {
+  color: #ef5d3a;
+  font-weight: 600;
+}
+
+.ui.feed>.event>.content .summary,
+.summary, .content {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 700;
+    color: #828282;
+}
