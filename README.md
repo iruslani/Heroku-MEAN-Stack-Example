@@ -16,4 +16,8 @@ You also need to provision the database:
 
 heroku addons:create mongolab
 
-Front End Style Library used: http://semantic-ui.com/
+To run the project:
+
+heroku local web
+
+
