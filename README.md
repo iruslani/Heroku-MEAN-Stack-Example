@@ -7,6 +7,6 @@ To install clone or download project.
 
 Go to the directory and create a heroku project:
 
-create heroku <PROJECT NAME>
+```create heroku <PROJECT NAME>
 
 Front End Style Library used: http://semantic-ui.com/
