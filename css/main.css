@@ -11,7 +11,7 @@
 .content.form {
   margin: 1em 0;
 }
-.ui.segment, .ui.progress.top.attached, .ui.message {
+.ui.segment, .ui.progress.top.attached {
   border-radius: 0px;
 }
 .ui.progress.attached, .ui.progress.attached .bar {
@@ -37,4 +37,10 @@
     font-size: 1em;
     font-weight: 700;
     color: #828282;
+}
+.show {
+  display: block!important;
+}
+.hide {
+  display: none!important;
 }
