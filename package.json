@@ -1,0 +1,31 @@
+{
+  "name": "meanstack",
+  "version": "1.0.0",
+  "description": "Sample Heroku App using the MEAN stack.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iruslani/Heroku-MEAN-Stack-Example.git"
+  },
+  "keywords": [
+    "Mongo",
+    "Express",
+    "Angular",
+    "Node",
+    "Heroku."
+  ],
+  "author": "Iwan Ruslani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iruslani/Heroku-MEAN-Stack-Example/issues"
+  },
+  "homepage": "https://github.com/iruslani/Heroku-MEAN-Stack-Example"
+}
