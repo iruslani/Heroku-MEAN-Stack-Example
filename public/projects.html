@@ -2,10 +2,10 @@
 
 <div class="ui container" >
   <div class=" ui one column centered grid">
-    <!-- <div class="column wrapper" ng-repeat="projects in projects | orderBy:'lastName'"> -->
+    <p>{{(projects.length === 0) && "There are no projects, please create one."}}</p>
     <div class="column wrapper" ng-repeat="project in projects">
       <h3 class="ui header">{{ project.name }}</h3>
-      <div class="ui dark-grey message">{{(project.required - project.donations > 0) && "$" + (project.required - project.donations) + " still needed for this project" || "Project is 100% funded. Thank you!!!"}} </div>
+      <div class="ui dark-grey message">{{((project.required - project.donations) > 0) && "$" + (project.required - project.donations) + " still needed for this project" || "Project is 100% funded. Thank you!!!"}} </div>
       <!-- <i class="large caret down icon"></i> -->
       <div class="ui segment">
         <div class="ui top attached progress red">
@@ -70,7 +70,7 @@
 </div>
 <!--  Share modal -->
 <div class="ui modal">
-  <i class="close icon"></i>
+  <i class="close icon" ng-click="closeModal()"></i>
   <div class="header">
     Share this project.
   </div>

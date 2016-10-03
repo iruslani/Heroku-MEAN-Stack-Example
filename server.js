@@ -55,14 +55,15 @@ app.get("/projects", function(req, res) {
 });
 
 app.post("/projects", function(req, res) {
-  var newContact = req.body;
-  newContact.createDate = new Date();
+  var newProject = req.body;
+  newProject.createDate = new Date();
+  console.log(req.body)
 
-  if (!(req.body.firstName || req.body.lastName)) {
-    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+  if (!(req.body.name || req.body.required)) {
+    handleError(res, "Invalid user input", "Must provide a project name and donation amount.", 400);
   }
 
-  db.collection(PROJECTS_COLLECTION).insertOne(newContact, function(err, doc) {
+  db.collection(PROJECTS_COLLECTION).insertOne(newProject, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new projects.");
     } else {

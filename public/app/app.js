@@ -14,9 +14,9 @@ angular.module("fundmeApp", ['ngRoute'])
                 controller: "NewProjectController",
                 templateUrl: "addProject.html"
             })
-            // .when("/contact/:contactId", {
-            //     controller: "EditContactController",
-            //     templateUrl: "contact.html"
+            // .when("/project/:projectId", {
+            //     controller: "EditProjectController",
+            //     templateUrl: "project.html"
             // })
             // .otherwise({
             //     redirectTo: "/"
@@ -33,16 +33,16 @@ angular.module("fundmeApp", ['ngRoute'])
                     alert("Error finding contacts.");
                 });
         }
-        this.createContact = function(contact) {
-            return $http.post("/projects", contact).
+        this.createProject = function(project) {
+            return $http.post("/projects", project).
                 then(function(response) {
                     return response;
                 }, function(response) {
                     alert("Error creating contact.");
                 });
         }
-        this.getProject = function(contactId) {
-            var url = "/projects/" + contactId;
+        this.getProject = function(projectId) {
+            var url = "/projects/" + projectId;
             return $http.get(url).
                 then(function(response) {
                     return response;
@@ -52,10 +52,6 @@ angular.module("fundmeApp", ['ngRoute'])
         }
         this.editProject = function(project) {
             var url = "/projects/" + project._id;
-            // console.log(project._id);
-            // console.log(project);
-            // console.log(project.progress);
-            // console.log(project.progress + project.donation);
             return $http.put(url, project).
                 then(function(response) {
                     return response;
@@ -64,13 +60,13 @@ angular.module("fundmeApp", ['ngRoute'])
                     console.log(response);
                 });
         }
-        // this.deleteProject = function(contactId) {
-        //     var url = "/contacts/" + contactId;
+        // this.deleteProject = function(projectId) {
+        //     var url = "/project/" + projectId;
         //     return $http.delete(url).
         //         then(function(response) {
         //             return response;
         //         }, function(response) {
-        //             alert("Error deleting this contact.");
+        //             alert("Error deleting this project.");
         //             console.log(response);
         //         });
         // }
@@ -80,32 +76,22 @@ angular.module("fundmeApp", ['ngRoute'])
 
       $scope.projects = projects.data;
       var projectData = projects.data
-
-      // var donationRequired = 200;
-      // $scope.progress = 0;
-      // var donationRequired = projects.data.fund.required;
-      // $scope.progress = projects.data.fund.progress;
       $scope.showWhy = false;
-      // $scope.progressbar={'min-width':'15'}
 
-      console.log("HomeController")
-      console.log(projects.data)
-      console.log(projectData.name)
+      // console.log("HomeController")
+      // console.log(projects.data)
+      // console.log(projectData.name)
 
-      // $scope.donationRemaining = donationRequired;
       $scope.saveMessage = "Save for later";
       $scope.addDonation = function(project) {
         var donation = this.donation
-
-        // console.log(!isNaN(donation));
         if (!isNaN(donation) && donation > 0 ){
+
           project.donations = project.donations + Math.floor(donation);
           project.progress = (project.donations / project.required )*100;
+          console.log(project)
           Projects.editProject(project);
-
-          // $scope.donationRemaining = $scope.donationRemaining - donation;
           this.donation = ''
-          // $scope.progress = 100 - ($scope.donationRemaining / 2);
         } else {
           console.log('invalid entery');
         }
@@ -128,28 +114,30 @@ angular.module("fundmeApp", ['ngRoute'])
     })
     .controller("NewProjectController", function($scope, $location, Projects) {
         $scope.back = function() {
-            $location.path("#/");
+            $location.path("/");
         }
-
-        $scope.saveContact = function(project) {
-            Projects.createContact(project).then(function(doc) {
+        $scope.createProject = function(project) {
+            project.progress = 0;
+            project.donations = 0;
+            project.required = Math.floor(project.required)
+            Projects.createProject(project).then(function(doc) {
                 var projectUrl = "/project/" + doc.data._id;
-                $location.path(contactUrl);
+                $location.path(projectUrl);
             }, function(response) {
                 alert(response);
             });
         }
     })
-    // .controller("EditContactController", function($scope, $routeParams, Contacts) {
-    //     Contacts.getContact($routeParams.contactId).then(function(doc) {
-    //         $scope.contact = doc.data;
+    // .controller("EditProjectController", function($scope, $routeParams, Projects) {
+    //     Projects.getProject($routeParams.contactId).then(function(doc) {
+    //         $scope.project = doc.data;
     //     }, function(response) {
     //         alert(response);
     //     });
     //
     //     $scope.toggleEdit = function() {
     //         $scope.editMode = true;
-    //         $scope.contactFormUrl = "contact-form.html";
+    //         $scope.contactFormUrl = "project-form.html";
     //     }
     //
     //     $scope.back = function() {
@@ -157,13 +145,13 @@ angular.module("fundmeApp", ['ngRoute'])
     //         $scope.contactFormUrl = "";
     //     }
     //
-    //     $scope.saveContact = function(contact) {
-    //         Contacts.editContact(contact);
+    //     $scope.saveProject = function(project) {
+    //         Contacts.editContact(project);
     //         $scope.editMode = false;
     //         $scope.contactFormUrl = "";
     //     }
     //
-    //     $scope.deleteContact = function(contactId) {
-    //         Contacts.deleteContact(contactId);
+    //     $scope.deleteProject = function(projectId) {
+    //         Contacts.deleteContact(projectId);
     //     }
     // });
