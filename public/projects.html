@@ -1,0 +1,91 @@
+<!-- Semantic UI  -->
+
+<div class="ui container" >
+  <div class=" ui one column centered grid">
+    <!-- <div class="column wrapper" ng-repeat="projects in projects | orderBy:'lastName'"> -->
+    <div class="column wrapper" ng-repeat="project in projects">
+      <h3 class="ui header">{{ project.name }}</h3>
+      <div class="ui dark-grey message">{{(project.required - project.donations > 0) && "$" + (project.required - project.donations) + " still needed for this project" || "Project is 100% funded. Thank you!!!"}} </div>
+      <!-- <i class="large caret down icon"></i> -->
+      <div class="ui segment">
+        <div class="ui top attached progress red">
+          <!-- <div class="bar" style="min-width: "+{{fundBox.progress}}+"%;"></div> -->
+          <div class="bar" ng-style="{'min-width': project.progress+'%'}"></div>
+        </div>
+        <div class="content">
+          <div class="summary"><span class="urgent">Only 3 days</span> left to fund this project.</div>
+          <div class="ui small feed">
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                   Join the 42 other donors who have already supported this project. Every dollar helps.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content form">
+          <form ng-submit="addDonation(project)">
+            <div class="ui equal width form">
+              <div class="fields">
+                <div class="field" id="donationInput" >
+                  <input type="text" ng-model="donation" placeholder="$50">
+                </div>
+                <div class="field">
+                  <input class="ui green button fluid" type="submit" value="Give Now">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="content">
+          <a href="" ng-click="showWhy = !showWhy">Why give $50?</a>
+        </div>
+        <div class="content" ng-class="showWhy ? 'show' : 'hide'">
+          You should donate $50 because it will benefit this project greatly.
+        </div>
+      </div>
+
+      <div class="ui grid">
+        <div class="eight wide column">
+          <div class="ui fluid button" tabindex="0">
+            <div class="visible content" ng-click="saveDonation()">{{saveMessage}}</div>
+            <!-- <div class="hidden content">
+              $12.99 a month
+            </div> -->
+          </div>
+        </div>
+        <div class="eight wide column">
+          <div class="ui animated fade fluid button" ng-click="share()" tabindex="1">
+            <div class="visible content">Tell your friends</div>
+            <div class="hidden content">
+              Share this project
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+</div>
+<!--  Share modal -->
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Share this project.
+  </div>
+  <div class="image content">
+  <button class="ui facebook button">
+    <i class="facebook icon"></i>
+    Facebook
+  </button>
+  <button class="ui twitter button">
+    <i class="twitter icon"></i>
+    Twitter
+  </button>
+  </div>
+  <div class="actions">
+    <div class="ui button" ng-click="closeModal()">Close</div>
+  </div>
+</div>
+</div>
