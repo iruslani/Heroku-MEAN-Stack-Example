@@ -12,6 +12,9 @@ View sample app on Heroku here: https://iwan-mean.herokuapp.com/
 
 ### `npm start`
 
+Need to run this command so you can read local env variables.
+### `heroku local web`
+
 A mongo DB is required to fully utilize the app. You can use Heroku to setup a quick webserver with a Mongo Add on.
 
 Heroku:
