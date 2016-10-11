@@ -4,7 +4,9 @@
   <div class=" ui one column centered grid">
     <p>{{(projects.length === 0) && "There are no projects, please create one." || null}}</p>
     <div class="column wrapper" ng-repeat="project in projects">
-      <h3 class="ui header">{{ project.name }}</h3>
+      <h3 class="ui header">
+        <a ng-href="#/project/{{project._id}}">{{ project.name }}</a>
+      </h3>
       <div class="ui dark-grey message">{{((project.required - project.donations) > 0) && "$" + (project.required - project.donations) + " still needed for this project" || "Project is 100% funded. Thank you!!!"}} </div>
       <!-- <i class="large caret down icon"></i> -->
       <div class="ui segment">
