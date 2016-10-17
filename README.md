@@ -1,36 +1,74 @@
-## Heroku-MEAN-Stack-Example
-This is an example Fund Me app created using the MEAN stack (Mongo, Express, Angular, and Node Application).
+# Heroku-MEAN-Stack-Example
 
-Based on this project:
-https://github.com/chrisckchang/mean-contactlist
+This project is a Mongo, Express, Angular, Node application build on the Heroku platform. With this stack you are able to build a simple application with create/read/update/delete (CRUD) functionality, the basic functions of persistent storage. This functionality allows us to build a rest API server and with Angular, display a single page application.
 
-View sample app on Heroku here: https://iwan-mean.herokuapp.com/
+I created this project just to learn Angular. I will be updating it with features as I have time.
 
-## Install the app:
+## View live demo
 
-### `npm install`
+View sample app on Heroku here: [https://iwan-mean.herokuapp.com](https://iwan-mean.herokuapp.com)
 
 
-## Run the app:
+### Prerequisities
 
-### `npm start`
+This application requires Heroku if you want to run it locally.
 
-Need to run this command so you can read local env variables.
-### `heroku local web`
+* [Heroku](https://devcenter.heroku.com/) - View this to get started.
 
-A mongo DB is required to fully utilize the app. You can use Heroku to setup a quick webserver with a Mongo Add on.
 
-Heroku:
-https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+### Installing
+Go to the directory and create a heroku project:
 
-## Go to the directory and create a heroku project:
+```
+heroku create <PROJECT-NAME>
+```
 
-### heroku create <PROJECT-NAME>
+You also need to provision the database:
 
-## You also need to provision the database:
+```
+heroku addons:create mongolab
+```
 
-### heroku addons:create mongolab
+```
+npm install
+```
 
-To run the project:
+You also need to setup .env file. (more instructions soon)
 
+
+## Running the tests
+
+Test documentation here.
+
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+Local deployment:
+```
 heroku local web
+```
+
+Heroku deployment:
+
+```
+git push heroku master
+```
+
+## Built With
+
+* [Angular](https://angularjs.org/) - The front-end framework used
+* [Mongo](https://docs.mongodb.com/manual/) - Mongo DB database
+* [NODE](https://nodejs.org/en/) - JavaScript runtime for server and has a package manager (NPM)  
+* [Express](https://expressjs.com/) - Web Framework for Node.js
+
+
+## Authors
+
+* **Iwan Ruslani** - *Initial work* - [linkedin](https://www.linkedin.com/in/iwan-ruslani-665a564)
+
+
+## Acknowledgments
+
+Original starter project from  [contributors](https://github.com/chrisckchang/mean-contactlist) based on [this tutorial](https://devcenter.heroku.com/articles/mean-apps-restful-api)
