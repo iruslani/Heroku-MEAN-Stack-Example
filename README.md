@@ -1,6 +1,9 @@
 ## Heroku-MEAN-Stack-Example
 This is an example Fund Me app created using the MEAN stack (Mongo, Express, Angular, and Node Application).
 
+Based on this project:
+https://github.com/chrisckchang/mean-contactlist
+
 View sample app on Heroku here: https://iwan-mean.herokuapp.com/
 
 ## Install the app:
