@@ -17,41 +17,34 @@ This application requires Heroku if you want to run it locally.
 
 
 ### Installing
-Go to the directory and create a heroku project:
 
+Go to the directory and create a heroku project:
 ```
 heroku create <PROJECT-NAME>
 ```
-
 You also need to provision the database:
-
 ```
 heroku addons:create mongolab
 ```
-
+Install npm packages:
 ```
 npm install
 ```
-
 You also need to setup .env file. (more instructions soon)
-
 
 ## Running the tests
 
 Test documentation here.
 
-
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
-
 Local deployment:
 ```
 heroku local web
 ```
-
+Then go to: http://localhost:5000/
 Heroku deployment:
-
 ```
 git push heroku master
 ```
@@ -63,6 +56,8 @@ git push heroku master
 * [NODE](https://nodejs.org/en/) - JavaScript runtime for server and has a package manager (NPM)  
 * [Express](https://expressjs.com/) - Web Framework for Node.js
 
+Aside from the basic CRUD stack, this app also uses:
+* [Semantic UI](http://semantic-ui.com/) - Front end user interface library
 
 ## Authors
 
