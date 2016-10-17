@@ -101,12 +101,12 @@ app.put("/projects/:id", function(req, res) {
   });
 });
 
-// app.delete("/projects/:id", function(req, res) {
-//   db.collection(PROJECTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-//     if (err) {
-//       handleError(res, err.message, "Failed to delete contact");
-//     } else {
-//       res.status(204).end();
-//     }
-//   });
-// });
+app.delete("/project/:id", function(req, res) {
+  db.collection(PROJECTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete contact");
+    } else {
+      res.status(204).end();
+    }
+  });
+});

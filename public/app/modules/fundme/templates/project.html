@@ -1,4 +1,4 @@
-<div class="ui container" >
+<div class="ui container" <p ng-if="contact">
   <div ng-hide="editMode" class="container">
     <div class="ui secondary  menu">
       <a class="item" ng-click="toggleEdit()">Edit</a>
@@ -32,4 +32,7 @@
   <!-- Contact form -->
   <div ng-include="contactFormUrl">
   </div>
+</div>
+<div class="ui container" <p ng-if="!contact">
+Project no longer exist.
 </div>
