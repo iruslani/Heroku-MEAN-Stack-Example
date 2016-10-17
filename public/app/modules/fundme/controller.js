@@ -33,7 +33,7 @@ angular.module("app.controllers", ["app.services"])
         console.log(shareModal);
       }
   })
-  .controller("NewProjectController", function($scope, $location, Projects) {
+  .controller("AddProjectController", function($scope, $location, Projects) {
       $scope.back = function() {
           $location.path("/");
       }
