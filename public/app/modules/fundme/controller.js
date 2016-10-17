@@ -62,11 +62,12 @@ angular.module("app.controllers", ["app.services"])
       }
       $scope.toggleEdit = function() {
           $scope.editMode = true;
-          $scope.contactFormUrl = "project-form.html";
+          $scope.contactFormUrl = "app/modules/fundme/templates/addProject.html";
       }
 
       $scope.back = function() {
           $scope.editMode = false;
+          console.log('Back button clicked');
           $scope.contactFormUrl = "";
       }
 
@@ -77,6 +78,7 @@ angular.module("app.controllers", ["app.services"])
       }
 
       $scope.deleteProject = function(projectId) {
-          Contacts.deleteContact(projectId);
+          console.log('delete button clicked for projectId' +projectId);
+          Projects.deleteProject(projectId);
       }
   });

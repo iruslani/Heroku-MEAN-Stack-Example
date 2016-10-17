@@ -1,9 +1,9 @@
 <div class="ui container" >
-  <div class="ui secondary  menu">
-    <a class="item" ng-click="back()">Back</a>
-    <a class="item" ng-click="deleteContact(project._id)">Delete</a>
-  </div>
   <div ng-hide="editMode" class="container">
+    <div class="ui secondary  menu">
+      <a class="item" ng-click="toggleEdit()">Edit</a>
+      <a class="item" ng-click="deleteProject(project._id)">Delete</a>
+    </div>
     <div class="col-md-6">
       <h2 ng-if="project.name">
         {{ project.name }}
