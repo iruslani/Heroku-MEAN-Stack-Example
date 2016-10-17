@@ -59,9 +59,9 @@ git push heroku master
 Aside from the basic CRUD stack, this app also uses:
 * [Semantic UI](http://semantic-ui.com/) - Front end user interface library
 
-## Authors
+## Author
 
-* **Iwan Ruslani** - *Initial work* - [linkedin](https://www.linkedin.com/in/iwan-ruslani-665a564)
+**Iwan Ruslani** - *Initial work* - [linkedin](https://www.linkedin.com/in/iwan-ruslani-665a564)
 
 
 ## Acknowledgments

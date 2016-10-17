@@ -22,8 +22,8 @@ angular.module("app.controllers", ["app.services"])
         $scope.saveMessage = 'Saved';
       }
       $scope.share = function() {
-        shareModal.addClass('active');
-        console.log(shareModal);
+        // shareModal.addClass('active');
+        console.log('Share button triggered');
       }
       $scope.whyDonate = function(){
         shareModal.addClass('show');

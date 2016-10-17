@@ -1,0 +1,35 @@
+<div class="ui container" >
+  <div class="ui secondary  menu">
+    <a class="item" ng-click="back()">Back</a>
+    <a class="item" ng-click="deleteContact(project._id)">Delete</a>
+  </div>
+  <div ng-hide="editMode" class="container">
+    <div class="col-md-6">
+      <h2 ng-if="project.name">
+        {{ project.name }}
+      </h2>
+      <p ng-if="project.description">
+        {{ project.description }}
+      </p>
+      <p ng-if="project.required">
+        Required Amount: {{project.required }}
+      </p>
+    </div>
+  </div>
+  <!-- <div ng-hide="editMode" class="container">
+    <div>
+      <p ng-if="contact.email">email: <a ng-href="mailto:{{ contact.email }}" target="_blank">{{ contact.email }}</a></p>
+      <p ng-if="project.name">Name: {{ project.name }} </p>
+      <p ng-if="project.description">Description: {{ project.description }} </p>
+      <p ng-if="contact.address"> address: {{ contact.address }} </p>
+      <p ng-if="contact.twitter"> twitter: <a ng-href="https://twitter.com/{{ contact.twitter }}" target="_blank">@{{ contact.twitter }}</a></p>
+      <p>
+        <button style="margin-top:20px" class="btn btn-default" ng-click="toggleEdit()">Edit</button>
+        <a style="margin-top:20px" class="btn btn-default" href="#/">Back</a>
+      </p>
+    </div>
+  </div> -->
+  <!-- Contact form -->
+  <div ng-include="contactFormUrl">
+  </div>
+</div>

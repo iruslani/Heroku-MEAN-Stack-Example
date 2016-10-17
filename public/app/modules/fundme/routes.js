@@ -2,7 +2,7 @@ angular.module("app.routes", ["ngRoute"])
     .config(function($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "projects.html",
+                templateUrl: "app/modules/fundme/templates/projects.html",
                 controller: "HomeController",
                 resolve: {
                     projects: function(Projects) {
@@ -12,15 +12,15 @@ angular.module("app.routes", ["ngRoute"])
             })
             .when("/project/new", {
                 controller: "AddProjectController",
-                templateUrl: "addProject.html"
+                templateUrl: "app/modules/fundme/templates/addProject.html"
             })
             .when("/project/edit/:projectId", {
                 controller: "AddProjectController",
-                templateUrl: "editProject.html"
+                templateUrl: "app/modules/fundme/templates/editProject.html"
             })
             .when("/project/:projectId", {
                 controller: "EditProjectController",
-                templateUrl: "project.html"
+                templateUrl: "app/modules/fundme/templates/project.html"
             })
             .otherwise({
                 redirectTo: "/"
