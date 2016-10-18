@@ -1,9 +1,9 @@
 <!-- Semantic UI  -->
 
-<div class="ui container" >
-  <div class=" ui one column centered grid">
+<div class="container" >
+  <div class=" ui four column stackable centered grid">
     <p>{{(projects.length === 0) && "There are no projects, please create one." || null}}</p>
-    <div class="column wrapper" ng-repeat="project in projects">
+    <div class="column wide wrapper" ng-repeat="project in projects">
       <h3 class="ui header">
         <a ng-href="#/project/{{project._id}}">{{ project.name }}</a>
       </h3>
@@ -28,10 +28,14 @@
         </div>
         <div class="content form">
           <form ng-submit="addDonation(project)">
-            <div class="ui equal width form">
+            <div class="ui equal width form one column grid">
               <div class="fields">
-                <div class="field" id="donationInput" >
+                <div class="ui field action labeled input" id="donationInput" >
+                  <div class="ui label">
+                    $
+                  </div>
                   <input type="text" ng-model="donation" placeholder="$50">
+                  <!-- <button class="ui button" type="submit">Give Now</button> -->
                 </div>
                 <div class="field">
                   <input class="ui green button fluid" type="submit" value="Give Now">
@@ -70,6 +74,13 @@
 
 
 </div>
+
+
+
+
+
+
+
 <!--  Share modal -->
 <div class="ui modal">
   <i class="close icon" ng-click="closeModal()"></i>
